@@ -13,3 +13,10 @@ buttonElement.addEventListener('click', () => {
 var greetElement = document.getElementById('greet')
 setTimeout(() => {greetElement.innerText = 'Click the button'}, 5000)
 
+var spanX = document.getElementById('x')
+var spanY = document.getElementById('y')
+
+document.addEventListener('mousemove', (e) => {
+    spanX.innerText = 'Co-ordinate of X : ' + e.x ;
+    spanY.innerText = ', Y : ' + e.y
+})
