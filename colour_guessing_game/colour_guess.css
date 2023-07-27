@@ -1,0 +1,19 @@
+.box{
+    height: 100px;
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: red;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.row{
+    display: flex;
+    margin-top: 10px;
+}
+
