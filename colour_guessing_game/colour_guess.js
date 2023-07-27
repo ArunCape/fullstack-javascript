@@ -6,10 +6,12 @@ console.log(colors);
 
 for(let box of boxes){
     console.log(box)
+    let bgcolor = colors[counter];
     box.id = counter++;
+    box.style.backgroundColor = bgcolor
     box.addEventListener('click', ()=> {
         var style = getComputedStyle(box);
-        console.log()
+        console.log(bgcolor)
         console.log(box.id, style.backgroundColor)
     })
 }
