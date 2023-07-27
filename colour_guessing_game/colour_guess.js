@@ -1,3 +1,9 @@
+var button = document.getElementById('button')
+
+button.addEventListener('click', () => {
+    location.reload()
+});
+
 var boxes = document.getElementsByClassName('box');
 var counter = 0;
 
