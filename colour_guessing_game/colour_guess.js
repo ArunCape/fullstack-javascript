@@ -4,6 +4,8 @@ button.addEventListener('click', () => {
     location.reload()
 });
 
+gameStart();
+
 
 
 var boxes = document.getElementsByClassName('box');
@@ -18,6 +20,10 @@ var colorfind = document.getElementById('colorfind');
 var coloritems = colors[Math.floor(Math.random() * colors.length)];
 colorfind.innerText = coloritems
 
+var score = 0;
+scoreElement = document.getElementById('score');
+scoreElement.innerText = score;
+
 for(let box of boxes){
     console.log(box)
     let bgcolor = colors[counter];
@@ -27,6 +33,11 @@ for(let box of boxes){
         var style = getComputedStyle(box);
         console.log(bgcolor)
         console.log(box.id, style.backgroundColor)
+        for(let i = 0 ; i<colors.length ; i++){
+            if(coloritems == colors[i]){
+                score += 1;
+            }
+        }
     })
 }
 
@@ -37,4 +48,36 @@ function createColorsArray() {
         colors.push(rgb);
     }
     return colors;
+}
+
+// Color Guessing
+
+// [r,g,y,b,w,v]
+// [0,1,2,3,4,5]
+
+// for(let i = 0 ; i<colors.length ; i++){
+//     if(coloritems == colors[i]){
+//         score += 1;
+//     }
+// }
+
+
+function gameStart(){
+    for(let box of boxes){
+        console.log(box)
+        let bgcolor = colors[counter];
+        box.id = counter++;
+        box.style.backgroundColor = bgcolor
+        box.addEventListener('click', ()=> {
+            var style = getComputedStyle(box);
+            console.log(bgcolor)
+            console.log(box.id, style.backgroundColor)
+            for(let i = 0 ; i<colors.length ; i++){
+                if(coloritems == colors[i]){
+                    score += 1;
+                    console.log('correct')
+                }
+            }
+        })
+    }
 }
