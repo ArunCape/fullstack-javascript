@@ -4,8 +4,6 @@ button.addEventListener('click', () => {
     location.reload()
 });
 
-gameStart();
-
 
 
 var boxes = document.getElementsByClassName('box');
@@ -62,21 +60,19 @@ function createColorsArray() {
 // }
 
 
-function gameStart(){
-    for(var box of boxes){
-        console.log(box)
-        let bgcolor = colors[counter];
-        box.id = counter++;
-        box.style.backgroundColor = bgcolor
-        box.addEventListener('click', ()=> {
-            var style = getComputedStyle(box);
-            console.log(bgcolor)
-            console.log(box.id, style.backgroundColor)
-            for(let i = 0 ; i<colors.length ; i++){
-                if(coloritems == colors[i]){
-                    score += 1;
-                }
+for(let box of boxes){
+    console.log(box)
+    let bgcolor = colors[counter];
+    box.id = counter++;
+    box.style.backgroundColor = bgcolor
+    box.addEventListener('click', ()=> {
+        var style = getComputedStyle(box);
+        console.log(bgcolor)
+        console.log(box.id, style.backgroundColor)
+        for(let i = 0 ; i<colors.length ; i++){
+            if(coloritems == colors[i]){
+                score += 1;
             }
-        })
-    }
+        }
+    })
 }
