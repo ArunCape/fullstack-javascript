@@ -4,16 +4,19 @@ button.addEventListener('click', () => {
     location.reload()
 });
 
-var count = document.getElementById('span')
-
-var colorfind = document.getElementById('colorfind')
 
 
 var boxes = document.getElementsByClassName('box');
 var counter = 0;
 
 var colors = createColorsArray();
-console.log(colors);
+// console.log(colors);
+
+var colorfind = document.getElementById('colorfind');
+// colorfind.innerText = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+// var item = items[Math.floor(Math.random()*items.length)];
+var coloritems = colors[Math.floor(Math.random() * colors.length)];
+colorfind.innerText = coloritems
 
 for(let box of boxes){
     console.log(box)
