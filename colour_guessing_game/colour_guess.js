@@ -4,6 +4,11 @@ button.addEventListener('click', () => {
     location.reload()
 });
 
+var count = document.getElementById('span')
+
+var colorfind = document.getElementById('colorfind')
+
+
 var boxes = document.getElementsByClassName('box');
 var counter = 0;
 
