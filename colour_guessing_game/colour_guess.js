@@ -22,22 +22,22 @@ var score = 0;
 scoreElement = document.getElementById('score');
 scoreElement.innerText = score;
 
-// for(let box of boxes){
-//     console.log(box)
-//     let bgcolor = colors[counter];
-//     box.id = counter++;
-//     box.style.backgroundColor = bgcolor
-//     box.addEventListener('click', ()=> {
-//         var style = getComputedStyle(box);
-//         console.log(bgcolor)
-//         console.log(box.id, style.backgroundColor)
-//         for(let i = 0 ; i<colors.length ; i++){
-//             if(coloritems == colors[i]){
-//                 score += 1;
-//             }
-//         }
-//     })
-// }
+for(let box of boxes){
+    console.log(box)
+    let bgcolor = colors[counter];
+    box.id = counter++;
+    box.style.backgroundColor = bgcolor
+    box.addEventListener('click', ()=> {
+        var style = getComputedStyle(box);
+        console.log(bgcolor)
+        console.log(box.id, style.backgroundColor)
+        for(let i = 0 ; i<colors.length ; i++){
+            if(coloritems == colors[i]){
+                score += 1;
+            }
+        }
+    })
+}
 
 function createColorsArray() {
     let colors = []
@@ -60,19 +60,3 @@ function createColorsArray() {
 // }
 
 
-for(let box of boxes){
-    console.log(box)
-    let bgcolor = colors[counter];
-    box.id = counter++;
-    box.style.backgroundColor = bgcolor
-    box.addEventListener('click', ()=> {
-        var style = getComputedStyle(box);
-        console.log(bgcolor)
-        console.log(box.id, style.backgroundColor)
-        for(let i = 0 ; i<colors.length ; i++){
-            if(coloritems == colors[i]){
-                score += 1;
-            }
-        }
-    })
-}
